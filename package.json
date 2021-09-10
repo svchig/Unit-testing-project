@@ -1,0 +1,36 @@
+{
+  "name": "unit-testing-project",
+  "version": "1.0.0",
+  "description": "a simple unit testing project using mocha",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint ./",
+    "coverage": "nyc npm run test"
+  },
+  "keywords": [
+    "mocha",
+    "unit",
+    "testing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-google": "^0.14.0",
+    "husky": "^7.0.2",
+    "mocha": "^9.1.1",
+    "mochawesome": "^6.2.2",
+    "nyc": "^15.1.0"
+  },
+  "nyc": {
+    "reporter": "html",
+    "check-coverage": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run coverage"
+    }
+  }
+}
